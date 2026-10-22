@@ -2,41 +2,16 @@ import sqlite3
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
-from fastapi.openapi.docs import get_swagger_ui_html
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 app = FastAPI(
     title="Nexus Componentes",
     summary="API para consultar e gerenciar o catálogo de peças.",
-    description=(
-        "## Gerenciar produtos sem usar esta documentação\n"
-        "Para cadastrar, editar ou excluir peças por um formulário, acesse "
-        "[Gerenciar produtos](/gerenciar). As alterações aparecem no catálogo da loja.\n\n"
-        "Esta página é a documentação técnica da API. Se precisar testar uma rota aqui, "
-        "expanda a operação, selecione **Try it out**, preencha os campos e pressione "
-        "**Execute**.\n\n"
-        "### Fluxo das operações\n"
-        "1. **Listar produtos** mostra o catálogo e os IDs dos itens.\n"
-        "2. **Criar produto** recebe nome e preço e retorna o ID criado.\n"
-        "3. Use esse **ID** para consultar, atualizar ou excluir a peça.\n\n"
-        "### Regras dos dados\n"
-        "- `nome` é obrigatório e não pode conter apenas espaços.\n"
-        "- `preco` deve ser um número maior que zero.\n"
-        "- Operações que recebem um ID respondem **404** quando o produto não existe.\n\n"
-        "> Atenção: **Excluir produto** remove o registro do banco de dados."
-    ),
-    openapi_tags=[
-        {
-            "name": "Produtos",
-            "description": (
-                "Catálogo de peças da loja. Consulte a lista para encontrar o ID "
-                "de um item antes de buscar, atualizar ou excluir."
-            ),
-        }
-    ],
     docs_url=None,
+    redoc_url=None,
+    openapi_url=None,
 )
 CAMINHO_BANCO = Path(__file__).resolve().parent / "loja.db"
 CAMINHO_STATIC = Path(__file__).resolve().parent / "static"
@@ -57,6 +32,7 @@ class ProdutoEntrada(BaseModel):
 
     nome: str = Field(
         min_length=1,
+        max_length=160,
         description="Nome da peça. Não pode ficar vazio ou conter apenas espaços.",
         examples=["Processador Ryzen 7"],
     )
@@ -104,29 +80,12 @@ def conectar():
 
 @app.get("/", include_in_schema=False)
 def inicio():
-    return FileResponse(CAMINHO_STATIC / "index.html")
+    return RedirectResponse(url="/gerenciar", status_code=303)
 
 
 @app.get("/gerenciar", include_in_schema=False)
 def gerenciar_produtos():
     return FileResponse(CAMINHO_STATIC / "gerenciar.html")
-
-
-@app.get("/docs", include_in_schema=False, response_class=HTMLResponse)
-def documentacao():
-    return get_swagger_ui_html(
-        openapi_url=app.openapi_url,
-        title=f"{app.title} | Documentação",
-        swagger_css_url="/static/docs.css",
-        swagger_favicon_url="/static/favicon.svg",
-        swagger_ui_parameters={
-            "deepLinking": True,
-            "displayRequestDuration": True,
-            "filter": True,
-            "docExpansion": "list",
-            "defaultModelsExpandDepth": 1,
-        },
-    )
 
 
 @app.get("/api/health", include_in_schema=False)
