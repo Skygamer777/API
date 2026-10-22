@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10131a">
+    <meta name="description" content="Encontre componentes para montar ou atualizar seu PC na Nexus Componentes.">
+    <title>Nexus Componentes | Monte seu próximo nível</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">
+      <span class="announcement-dot" aria-hidden="true"></span>
+      <p>Seu próximo upgrade começa aqui.</p>
+      <a href="#produtos">Explore o catálogo <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Nexus Componentes, página inicial">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M8 29V11h5l14 17V11h5v18h-5L13 12v17H8Z" fill="currentColor"/><path d="M30 8h3v3h-3zM7 29h3v3H7z" fill="#B7F36B"/></svg>
+        </span>
+        <span class="brand-name">nexus<span>.</span><small>COMPONENTES</small></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#categorias">Categorias</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre a loja</a>
+      </nav>
+
+      <div class="header-actions">
+        <label class="search-box" for="search-input">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.8" cy="8.8" r="5.8"/><path d="m13.2 13.2 4 4"/></svg>
+          <input id="search-input" type="search" placeholder="Buscar componentes..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <button class="cart-trigger" id="cart-open" type="button" aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6"/><circle cx="10" cy="20" r="1.2"/><circle cx="18" cy="20" r="1.2"/></svg>
+          <span>Carrinho</span>
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <span class="eyebrow"><span></span> TECNOLOGIA QUE MOVE VOCÊ</span>
+          <h1 id="hero-title">Seu setup.<br>Suas <span>regras.</span></h1>
+          <p>Peças certas, performance de verdade. Encontre os componentes para tirar seu próximo projeto do papel.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#produtos">Explorar produtos <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#categorias">Conheça as categorias <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-avatars" aria-hidden="true"><span>NX</span><span>PC</span><span>+</span></div>
+            <p><strong>Feito para quem entende</strong><br>do primeiro build ao próximo upgrade</p>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-glow"></div>
+          <div class="hardware-card cpu-card">
+            <span class="hardware-label">PROCESSADOR</span>
+            <span class="cpu-chip"><span>NX</span><small>CORE</small></span>
+            <span class="hardware-caption">POTÊNCIA EM CADA NÚCLEO</span>
+          </div>
+          <div class="hardware-card gpu-card">
+            <span class="gpu-fan fan-one"></span><span class="gpu-fan fan-two"></span><span class="gpu-fan fan-three"></span>
+            <span class="gpu-light"></span>
+            <span class="hardware-label">GRAPHICS SERIES</span>
+            <span class="gpu-name">RTX <b>∞</b></span>
+          </div>
+          <div class="floating-chip chip-top">DDR5 <span>↗</span></div>
+          <div class="floating-chip chip-bottom"><span class="status-dot"></span> BUILD READY</div>
+          <div class="art-cross cross-one">+</div><div class="art-cross cross-two">+</div>
+        </div>
+        <div class="hero-bottom"><span>01 / 03</span><span class="hero-line"></span><span>PERFORMANCE, DO SEU JEITO</span></div>
+      </section>
+
+      <section class="benefits" id="sobre" aria-label="Diferenciais da loja">
+        <article><span class="benefit-icon" aria-hidden="true">↗</span><div><strong>Escolha sem complicação</strong><p>Encontre o que combina com seu projeto</p></div></article>
+        <article><span class="benefit-icon" aria-hidden="true">⌘</span><div><strong>Seu setup, seu estilo</strong><p>Componentes para cada tipo de build</p></div></article>
+        <article><span class="benefit-icon" aria-hidden="true">◎</span><div><strong>Vitrine sempre atualizada</strong><p>Produtos conectados ao nosso catálogo</p></div></article>
+      </section>
+
+      <section class="categories-section section-wrap" id="categorias">
+        <div class="section-heading">
+          <div><span class="eyebrow eyebrow-dark">ENCONTRE O SEU PRÓXIMO UPGRADE</span><h2>Explore por <span>categoria</span></h2></div>
+          <a class="text-link dark-link" href="#produtos">Ver todos os produtos <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="category-grid">
+          <button class="category-card category-cpu" data-category="processadores" type="button"><span class="category-index">01</span><span class="category-symbol" aria-hidden="true">▦</span><span class="category-title">Processadores</span><span class="category-arrow" aria-hidden="true">↗</span></button>
+          <button class="category-card category-gpu" data-category="placas-de-video" type="button"><span class="category-index">02</span><span class="category-symbol" aria-hidden="true">▰</span><span class="category-title">Placas de vídeo</span><span class="category-arrow" aria-hidden="true">↗</span></button>
+          <button class="category-card category-memory" data-category="memoria" type="button"><span class="category-index">03</span><span class="category-symbol" aria-hidden="true">▤</span><span class="category-title">Memória RAM</span><span class="category-arrow" aria-hidden="true">↗</span></button>
+          <button class="category-card category-storage" data-category="armazenamento" type="button"><span class="category-index">04</span><span class="category-symbol" aria-hidden="true">▱</span><span class="category-title">Armazenamento</span><span class="category-arrow" aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section class="products-section section-wrap" id="produtos">
+        <div class="section-heading products-heading">
+          <div><span class="eyebrow eyebrow-dark">CURADORIA NEXUS</span><h2>Peças que fazem <span>a diferença</span></h2></div>
+          <div class="catalog-meta"><span class="catalog-live"></span><span id="catalog-count">Carregando catálogo...</span></div>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filtrar produtos por categoria">
+          <button class="filter-chip is-active" data-category="todos" type="button">Todos</button>
+          <button class="filter-chip" data-category="processadores" type="button">Processadores</button>
+          <button class="filter-chip" data-category="placas-de-video" type="button">Placas de vídeo</button>
+          <button class="filter-chip" data-category="memoria" type="button">Memória RAM</button>
+          <button class="filter-chip" data-category="armazenamento" type="button">Armazenamento</button>
+          <button class="filter-chip" data-category="outros" type="button">Outros</button>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite" aria-busy="true"></div>
+        <div class="catalog-message" id="catalog-message" role="status" hidden></div>
+        <button class="button button-outline retry-button" id="retry-button" type="button" hidden>Tentar novamente</button>
+      </section>
+
+      <section class="newsletter section-wrap">
+        <div class="newsletter-mark" aria-hidden="true">N.</div>
+        <div><span class="eyebrow">UM UNIVERSO DE POSSIBILIDADES</span><h2>O próximo nível<br>está no seu <span>alcance.</span></h2></div>
+        <a class="button button-light" href="#produtos">Encontrar minhas peças <span aria-hidden="true">↗</span></a>
+        <div class="newsletter-orbit" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/" aria-label="Nexus Componentes, início">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M8 29V11h5l14 17V11h5v18h-5L13 12v17H8Z" fill="currentColor"/><path d="M30 8h3v3h-3zM7 29h3v3H7z" fill="#B7F36B"/></svg></span>
+        <span class="brand-name">nexus<span>.</span><small>COMPONENTES</small></span>
+      </a>
+      <p>Hardware para ir além.</p>
+      <span class="footer-copy">© 2026 Nexus Componentes</span>
+    </footer>
+
+    <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+      <div class="drawer-header"><div><span class="eyebrow eyebrow-dark">SEU SETUP COMEÇA AQUI</span><h2 id="cart-title">Carrinho <span id="drawer-count">(0)</span></h2></div><button class="icon-button" id="cart-close" type="button" aria-label="Fechar carrinho">×</button></div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-empty" id="cart-empty"><span aria-hidden="true">⌑</span><h3>Seu carrinho está vazio</h3><p>Adicione seus componentes favoritos para montar seu setup.</p><button class="text-link dark-link" id="continue-shopping" type="button">Continuar explorando <span aria-hidden="true">↗</span></button></div>
+      <div class="cart-summary" id="cart-summary" hidden><div><span>Subtotal</span><strong id="cart-subtotal">R$ 0,00</strong></div><p>Frete e pagamento são combinados na finalização.</p><button class="button button-primary checkout-button" type="button" disabled>Finalização em breve</button><small>Este carrinho é uma demonstração de vitrine.</small></div>
+    </aside>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+from preparar_banco import app
