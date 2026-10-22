@@ -81,9 +81,9 @@ function renderProducts() {
     if (products.length === 0) {
       const message = document.createElement("span");
       message.append("Nosso catálogo ainda está sendo preparado. ");
-      const link = createElement("a", "", "Acesse a documentação da API");
-      link.href = "/docs";
-      message.append(link, " para cadastrar os primeiros produtos.");
+      const link = createElement("a", "", "Acesse o formulário de produtos");
+      link.href = "/gerenciar";
+      message.append(link, " para adicionar os primeiros produtos.");
       showCatalogMessage(message);
       return;
     }

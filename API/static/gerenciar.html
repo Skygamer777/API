@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10131a">
+    <meta name="description" content="Gerencie o catálogo de peças da Nexus Componentes.">
+    <title>Gerenciar produtos | Nexus Componentes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/gerenciar.css">
+    <script src="/static/gerenciar.js" defer></script>
+  </head>
+  <body class="manage-page">
+    <div class="announcement">
+      <span class="announcement-dot" aria-hidden="true"></span>
+      <p>PAINEL DO CATÁLOGO</p>
+      <a href="/">Voltar para a loja <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Nexus Componentes, página inicial">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M8 29V11h5l14 17V11h5v18h-5L13 12v17H8Z" fill="currentColor"/><path d="M30 8h3v3h-3zM7 29h3v3H7z" fill="#B7F36B"/></svg>
+        </span>
+        <span class="brand-name">nexus<span>.</span><small>COMPONENTES</small></span>
+      </a>
+      <a class="manage-store-link" href="/">Ver a loja <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="manage-main">
+      <section class="manage-intro">
+        <span class="eyebrow eyebrow-dark">CATÁLOGO NEXUS</span>
+        <h1>Gerencie seus <span>produtos.</span></h1>
+        <p>Cadastre uma peça pelo formulário e ela aparecerá na vitrine da loja. Você também pode atualizar preços e remover produtos.</p>
+      </section>
+
+      <div class="manage-layout">
+        <section class="manage-panel form-panel" aria-labelledby="form-title">
+          <div class="manage-panel-heading">
+            <span class="form-step">01</span>
+            <div>
+              <span class="eyebrow eyebrow-dark">INFORMAÇÕES DA PEÇA</span>
+              <h2 id="form-title">Adicionar produto</h2>
+            </div>
+          </div>
+          <form id="product-form">
+            <label class="field-label" for="product-name">Nome do produto</label>
+            <input class="form-control" id="product-name" name="nome" type="text" placeholder="Ex.: Processador Ryzen 7" maxlength="160" autocomplete="off" required>
+            <span class="field-hint">Informe um nome claro, incluindo marca e modelo.</span>
+
+            <label class="field-label price-label" for="product-price">Preço</label>
+            <div class="price-input-wrap">
+              <span aria-hidden="true">R$</span>
+              <input class="form-control" id="product-price" name="preco" type="number" min="0.01" step="0.01" placeholder="0,00" inputmode="decimal" required>
+            </div>
+            <span class="field-hint">Digite o valor em reais. O preço deve ser maior que zero.</span>
+
+            <div class="form-actions">
+              <button class="button button-primary" id="submit-button" type="submit">Cadastrar produto <span aria-hidden="true">↗</span></button>
+              <button class="button button-outline" id="cancel-edit" type="button" hidden>Cancelar edição</button>
+            </div>
+            <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="manage-panel inventory-panel" aria-labelledby="inventory-title">
+          <div class="inventory-heading">
+            <div class="manage-panel-heading">
+              <span class="form-step">02</span>
+              <div>
+                <span class="eyebrow eyebrow-dark">PRODUTOS CADASTRADOS</span>
+                <h2 id="inventory-title">Seu catálogo</h2>
+              </div>
+            </div>
+            <span class="inventory-count" id="inventory-count">Carregando...</span>
+          </div>
+          <div class="inventory-feedback" id="inventory-feedback" role="status" aria-live="polite"></div>
+          <div class="inventory-list" id="inventory-list" aria-busy="true"></div>
+          <button class="button button-outline inventory-retry" id="retry-inventory" type="button" hidden>Tentar carregar novamente</button>
+        </section>
+      </div>
+      <p class="manage-note"><span aria-hidden="true">i</span> Alterações feitas aqui são salvas diretamente no catálogo da loja.</p>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/" aria-label="Nexus Componentes, início">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M8 29V11h5l14 17V11h5v18h-5L13 12v17H8Z" fill="currentColor"/><path d="M30 8h3v3h-3zM7 29h3v3H7z" fill="#B7F36B"/></svg></span>
+        <span class="brand-name">nexus<span>.</span><small>COMPONENTES</small></span>
+      </a>
+      <p>Hardware para ir além.</p>
+      <a class="footer-manage-link" href="/">Voltar para a loja</a>
+      <span class="footer-copy">© 2026 Nexus Componentes</span>
+    </footer>
+  </body>
+</html>

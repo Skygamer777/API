@@ -11,16 +11,16 @@ app = FastAPI(
     title="Nexus Componentes",
     summary="API para consultar e gerenciar o catálogo de peças.",
     description=(
-        "## Comece por aqui\n"
-        "Esta API permite cadastrar e manter os produtos exibidos na loja Nexus. "
-        "Os dados ficam armazenados no banco SQLite local.\n\n"
-        "### Fluxo recomendado\n"
-        "1. Use **Listar produtos** para consultar o catálogo.\n"
-        "2. Use **Criar produto** para adicionar uma peça; informe o nome e o preço.\n"
-        "3. Use o **ID** retornado para consultar, atualizar ou remover essa peça.\n\n"
-        "### Como testar\n"
-        "Abra uma operação, selecione **Try it out**, preencha os campos e pressione "
-        "**Execute**. Os exemplos abaixo mostram o formato esperado.\n\n"
+        "## Gerenciar produtos sem usar esta documentação\n"
+        "Para cadastrar, editar ou excluir peças por um formulário, acesse "
+        "[Gerenciar produtos](/gerenciar). As alterações aparecem no catálogo da loja.\n\n"
+        "Esta página é a documentação técnica da API. Se precisar testar uma rota aqui, "
+        "expanda a operação, selecione **Try it out**, preencha os campos e pressione "
+        "**Execute**.\n\n"
+        "### Fluxo das operações\n"
+        "1. **Listar produtos** mostra o catálogo e os IDs dos itens.\n"
+        "2. **Criar produto** recebe nome e preço e retorna o ID criado.\n"
+        "3. Use esse **ID** para consultar, atualizar ou excluir a peça.\n\n"
         "### Regras dos dados\n"
         "- `nome` é obrigatório e não pode conter apenas espaços.\n"
         "- `preco` deve ser um número maior que zero.\n"
@@ -105,6 +105,11 @@ def conectar():
 @app.get("/", include_in_schema=False)
 def inicio():
     return FileResponse(CAMINHO_STATIC / "index.html")
+
+
+@app.get("/gerenciar", include_in_schema=False)
+def gerenciar_produtos():
+    return FileResponse(CAMINHO_STATIC / "gerenciar.html")
 
 
 @app.get("/docs", include_in_schema=False, response_class=HTMLResponse)
